@@ -1,34 +1,45 @@
 #include <stdio.h>
 
-int main(void) {
-    int num1, num2;
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Succes)
+ */
 
-    for (num1 = 0; num1 <= 99; num1++) {
-        for (num2 = num1; num2 <= 99; num2++) {
-            // Print tens digit of num1
-            putchar((num1 / 10) + '0');
+int main(void)
+{
+	int tho;
+	int hun;
+	int ten;
+	int bas;
 
-            // Print ones digit of num1
-            putchar((num1 % 10) + '0');
+for ( tho = 0 ; tho < 10 ; tho++)
+{	
 
-            // Print space between the numbers
-            putchar(' ');
-
-            // Print tens digit of num2
-            putchar((num2 / 10) + '0');
-
-            // Print ones digit of num2
-            putchar((num2 % 10) + '0');
-
-            // Print comma and space if num2 is not the last number
-            if (num2 != 99) {
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
-
-    putchar('\n');
-
-    return 0;
+	for (hun = 0 ; hun <= 10 ; hun++)
+	{
+	
+		for (ten = 0 ; ten < 10 ; ten++)
+		{
+			for ( bas = 0 ; bas < 10 ; bas++)
+			{
+				putchar('0' + tho);
+				putchar('0' + hun);
+				putchar(32);
+				putchar('0' + ten);
+				putchar('0' + bas);
+				if (!(tho == 9 && hun == 8))
+				{
+					putchar(',');
+					putchar(32);
+				}
+				bas++;
+			}
+		}
+	}
 }
+	putchar('\n');
+	return (0);
+}
+
+
